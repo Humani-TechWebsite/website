@@ -1,7 +1,34 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="container-fluid">
-            <h2>TODO: Create module 'Contact'</h2>
+        <div class="container-fluid panel">
+            <h2>Contact Humani-Tech</h2>
+            <h4>Please fill out this form if you are part of a non-profit interested in contacting Humani-Tech</h4>
+            <h4>You can also email us at: {{$ctrl.humaniTechEmailObj.$value}}</h4>
+            <form ng-submit = "$ctrl.contactRequest()" class="form-inline" style="width: 100%">
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input type="text" placeholder="What do you need help with?"
+                           ng-model="$ctrl.requestText" class="form-control" style="width: 100%">
+                </div>
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input id="inputComment" type="text" placeholder="Your Email"
+                           ng-model="$ctrl.email" class="form-control" style="width: 100%">
+                </div>
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input type="text" placeholder="Your Name (Optional)"
+                           ng-model="$ctrl.name" class="form-control" style="width: 100%">
+                </div>
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input type="text" placeholder="Your Phone Number (Optional)"
+                           ng-model="$ctrl.phone" class="form-control" style="width: 100%">
+                </div>
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input type="text" placeholder="Organization Name (Optional)"
+                           ng-model="$ctrl.organizationName" class="form-control" style="width: 100%">
+                </div>
+                <br>
+                <input type="submit" class="btn btn-raised btn-success" value="Submit" style="margin-top: 1px">
+            </form>
+            <h4 ng-show="$ctrl.showError" style="color: #d9534f">Please fill out all required fields</h4>
         </div>
     </div>
 </div>
