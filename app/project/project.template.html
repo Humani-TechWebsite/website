@@ -1,7 +1,32 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-sm-6">
         <div class="container-fluid">
+            <img class="img-responsive img-rounded" src="{{$ctrl.image.$value}}"
+                 width="100%">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="container-fluid panel">
             <h2>{{$ctrl.project}}</h2>
+            <h4>{{$ctrl.description.$value}}</h4>
+            <br>
+        </div>
+    </div>
+    <div class="col-sm-6 col-sm-6-push">
+        <div class="container-fluid panel">
+            <h3>Likes: {{$ctrl.likes.$value}}</h3>
+            <div class="container-fluid">
+            </div>
+            <button class="btn btn-raised btn-info btn-xs" ng-click="$ctrl.pushLike()">
+                Like
+            </button>
+        </div>
+    </div>
+    <div class="col-sm-6 col-sm-6-push">
+        <div class="container-fluid panel">
+            <h3>Comments</h3>
+            <div class="container-fluid">
+            </div>
         </div>
     </div>
 </div>

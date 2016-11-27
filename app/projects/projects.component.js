@@ -5,6 +5,6 @@ angular.module('projects').component('projects', {
         var self = this;
         self.projectListRef = firebase.database().ref().child("project-list");
         self.projectList = $firebaseArray(self.projectListRef);
-        console.log(self.projectList)
+        // console.log(self.projectList)
     }]
 });
