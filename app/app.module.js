@@ -1,0 +1,1 @@
+angular.module('humani-techApp', ['ngRoute', 'ngAnimate', 'firebase', 'navBar', 'projects', 'about', 'project', 'events', 'event', 'meetTheTeam', 'join', 'contact']);
