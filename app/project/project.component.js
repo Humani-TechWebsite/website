@@ -1,7 +1,7 @@
 angular.module('project').component('project', {
     templateUrl: 'project/project.template.html',
 
-    controller: ['$routeParams' ,'$firebaseObject', '$firebaseArray', function projectController($routeParams, $firebaseObject, $firebaseArray) {
+    controller: ['$route', '$routeParams' ,'$firebaseObject', '$firebaseArray', function projectController($route, $routeParams, $firebaseObject, $firebaseArray) {
         var self = this;
         self.project = $routeParams.name;
         self.formattedProjectName =self.project.replace(" ", "%20");
@@ -31,6 +31,25 @@ angular.module('project').component('project', {
             // console.log(self.likes);
             self.likes.$value = self.likes.$value + 1;
             self.likes.$save();
-        }
+        };
+        
+        self.comment = "";
+        self.commenter = "";
+
+        self.commentsRef = (self.projectRef.child("comments"));
+
+        self.pushComment = function () {
+            var key = Date.now();
+            if (self.comment && self.comment != "" && self.commenter && self.commenter != "") {
+                var commentObj = $firebaseObject(self.commentsRef.child(key));
+                commentObj.comment = self.comment;
+                commentObj.commenter = self.commenter;
+                commentObj.$save();
+                self.comment = "";
+                self.commenter = "";
+            }
+        };
+
+        self.comments = $firebaseArray(self.commentsRef);
     }]
 });

@@ -17,7 +17,7 @@
             <h3>Likes: {{$ctrl.likes.$value}}</h3>
             <div class="container-fluid">
             </div>
-            <button class="btn btn-raised btn-info btn-xs" ng-click="$ctrl.pushLike()">
+            <button class="btn btn-raised btn-info" ng-click="$ctrl.pushLike()">
                 Like
             </button>
         </div>
@@ -27,6 +27,23 @@
             <h3>Comments</h3>
             <div class="container-fluid">
             </div>
+            <form ng-submit = "$ctrl.pushComment()" class="form-inline" style="width: 100%">
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input id="inputComment" type="text" placeholder="Comment"
+                           ng-model="$ctrl.comment" class="form-control" style="width: 100%">
+                </div>
+                <br>
+                <div class="form-group" style="margin-top: 1px">
+                    <input id="inputCommenter" type="text" placeholder="Your Name"
+                           ng-model="$ctrl.commenter" class="form-control">
+                </div>
+                <input type="submit" class="btn btn-raised btn-success" value="Add Comment" style="margin-top: 1px">
+                <div ng-repeat="comment in $ctrl.comments | orderBy:'-'">
+                    <h4 style="margin-bottom: 1px">{{comment.comment}}</h4>
+                    <strong>{{comment.commenter}}</strong>
+                    <br>
+                </div>
+            </form>
         </div>
     </div>
 </div>
