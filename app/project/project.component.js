@@ -6,6 +6,8 @@ angular.module('project').component('project', {
         self.project = $routeParams.name;
         self.formattedProjectName =self.project.replace(" ", "%20");
         self.projectRef = firebase.database().ref().child("project-data/"+self.project);
+        self.commentsEnabledRef = firebase.database().ref().child("comments-enabled");
+        self.commentsEnabled = $firebaseObject(self.commentsEnabledRef);
         // self.projectData = $firebaseObject(self.projectRef);
         // console.log(self.projectData.description);
         self.descriptionRef = (self.projectRef.child("description"));
