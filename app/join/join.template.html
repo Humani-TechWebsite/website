@@ -1,7 +1,17 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="container-fluid">
-            <h2>TODO: Create module 'Join'</h2>
+        <div class="container-fluid panel">
+            <h2>Join Humani-Tech</h2>
+            <h3>Enter your email here if you are interested in joining Humani-Tech</h3>
+            <form ng-submit = "$ctrl.joinRequest()" class="form-inline" style="width: 100%">
+                <div class="form-group" style="margin-top: 5px; width: 100%">
+                    <input id="inputComment" type="text" placeholder="gatech email"
+                           ng-model="$ctrl.email" class="form-control" style="width: 100%">
+                </div>
+                <br>
+                <input type="submit" class="btn btn-raised btn-success" value="Submit" style="margin-top: 1px">
+            </form>
+            <h4 ng-show="$ctrl.showError" style="color: #d9534f">Please enter a valid gatech email address</h4>
         </div>
     </div>
 </div>

@@ -38,12 +38,12 @@
                            ng-model="$ctrl.commenter" class="form-control">
                 </div>
                 <input type="submit" class="btn btn-raised btn-success" value="Add Comment" style="margin-top: 1px">
-                <div ng-repeat="comment in $ctrl.comments | orderBy:'-'">
-                    <h4 style="margin-bottom: 1px">{{comment.comment}}</h4>
-                    <strong>{{comment.commenter}}</strong>
-                    <br>
-                </div>
             </form>
+            <div ng-repeat="comment in $ctrl.comments | orderBy:'-'">
+                <h4 style="margin-bottom: 1px">{{comment.comment}}</h4>
+                <strong>{{comment.commenter}}</strong>
+                <br>
+            </div>
         </div>
     </div>
 </div>
