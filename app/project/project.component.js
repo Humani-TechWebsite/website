@@ -8,8 +8,6 @@ angular.module('project').component('project', {
         self.projectRef = firebase.database().ref().child("project-data/"+self.project);
         self.commentsEnabledRef = firebase.database().ref().child("comments-enabled");
         self.commentsEnabled = $firebaseObject(self.commentsEnabledRef);
-        // self.projectData = $firebaseObject(self.projectRef);
-        // console.log(self.projectData.description);
         self.descriptionRef = (self.projectRef.child("description"));
         self.description = $firebaseObject(self.descriptionRef);
         self.imageRef = (self.projectRef.child("image-url"));
@@ -18,8 +16,6 @@ angular.module('project').component('project', {
         self.likes = $firebaseObject(self.likesRef);
         self.likes.$loaded()
             .then(function(data) {
-                // console.log("likes");
-                // console.log(self.likes.$value);
                 if (data.$value == null) {
                     self.likes.$value = 0;
                     self.likes.$save();
@@ -30,7 +26,6 @@ angular.module('project').component('project', {
             });
 
         self.pushLike = function () {
-            // console.log(self.likes);
             self.likes.$value = self.likes.$value + 1;
             self.likes.$save();
         };
