@@ -8,7 +8,7 @@ angular.module('event').component('event', {
         self.eventRef = firebase.database().ref().child("event-data/Binary Ball");
         self.commentsEnabledRef = firebase.database().ref().child("comments-enabled");
         self.commentsEnabled = $firebaseObject(self.commentsEnabledRef);
-        console.log(self.eventRef);
+        // console.log(self.eventRef);
         self.descriptionRef = (self.eventRef.child("description"));
         self.description = $firebaseObject(self.descriptionRef);
         self.imageRef = (self.eventRef.child("image-url"));
