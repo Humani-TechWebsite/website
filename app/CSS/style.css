@@ -11,6 +11,30 @@ a, u {
 
 }
 
+#main-banner-image {
+    background-image: url("../assets/images/HTfinallogotrans.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 0px;
+    width: 100vw;
+    height: 20vw;
+    position: fixed;
+    align-content: center;
+    z-index: -1;
+}
+
+.centered {
+    position: fixed;
+    top: 10vw;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+#header-push {
+    height: 20vw;
+}
+
 
 
 .nav-bar-fade-on-hover {

@@ -7,7 +7,8 @@
     <!--<link rel="shortcut icon" type="image/png" href="assets/Favicon.png"/>-->
 
     <meta property="og:title" content="Humani-Tech"/>
-    <meta property="og:description" content="Humani-Tech is a club in the College of Computing at The Georgia Institute of Technology that connects Computer Science students with non-profits in need of technical skills."/>
+    <meta property="og:description"
+          content="Humani-Tech is a club in the College of Computing at The Georgia Institute of Technology that connects Computer Science students with non-profits in need of technical skills."/>
     <meta property="og:image" content="PREVIEW_IMAGE_URL"/>
 
     <!--JQuery-->
@@ -103,26 +104,31 @@
 </head>
 <body>
 
-<a href="/about">
-    <div class="jumbotron heading" style="width: 100vw">
-        <img src= "assets/images/HTfinallogotrans.png"></img> 
-        <!--<h1 class="heading">Humani-Tech</h1>-->
-    </div>
-</a>
+<!--<a href="/about">-->
+<!--<div class="jumbotron heading" style="width: 100vw">-->
+<!--<img src= "assets/images/HTfinallogotrans.png">-->
+<!--&lt;!&ndash;<h1 class="heading">Humani-Tech</h1>&ndash;&gt;-->
+<!--</div>-->
+<!--</a>-->
+
+<div id="main-banner-image" class="centered"></div>
+<div id="header-push"></div>
 
 <!--<div id="main-banner-image"></div>-->
 <!--<div id="header-push"></div>-->
 
+<div style="background-color: #EEEEEE; height: 100%">
 
-<nav-bar></nav-bar>
+    <nav-bar></nav-bar>
 
-<div class="view-container">
-    <div data-ng-view class="view-frame"></div>
+    <div class="view-container">
+        <div data-ng-view class="view-frame"></div>
+    </div>
 </div>
 
-<!--<div  style="position: absolute; bottom: 0; right: 0; width: 100px; text-align:right; margin-right: 2%; color: #aaaaaa">
+<div style="position: absolute; bottom: 0; right: 0; width: 100px; text-align:right; margin-right: 2%; color: #aaaaaa">
     Website Designed by Michelle Ni
-</div>-->
+</div>
 
 <!--<br>-->
 <!--<br>-->
@@ -131,7 +137,8 @@
 </html>
 
 <script>
-    console.warn = function() {};
+    console.warn = function () {
+    };
     //disabling firebase's console warnings
 </script>
 
